@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Cloud Practitioner Essentials - Study Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9b4ad57.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0 2rem;
+      background-color: #f9fafb;
+      color: #111827;
+    }
+    header {
+      background-color: #232f3e;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    section {
+      margin: 2rem 0;
+    }
+    h2 {
+      color: #2563eb;
+      cursor: pointer;
+    }
+    .content {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+      border-left: 4px solid #2563eb;
+    }
+    .icon {
+      margin-right: 0.5rem;
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-cloud"></i> AWS Cloud Practitioner Essentials - Interactive Guide</h1>
+  </header>
+
+  <section>
+    <h2 onclick="toggle('m1')"><i class="fas fa-lightbulb icon"></i> Module 1: Cloud Concepts</h2>
+    <div class="content" id="m1">
+      <strong>Key Topics:</strong>
+      <ul>
+        <li>What is Cloud Computing</li>
+        <li>Benefits of Cloud Computing</li>
+        <li>Types of Cloud Deployment Models</li>
+        <li>Types of Cloud Service Models</li>
+      </ul>
+      <strong>Deep Dive:</strong>
+      <p>Benefits: Agility, elasticity, cost savings, and flexibility.<br>
+      Deployment Models: Public, Private, Hybrid.<br>
+      Service Models: IaaS, PaaS, SaaS.</p>
+    </div>
+  </section>
+
+  <script>
+    const modules = [
+      { id: 'm2', title: 'Module 2: AWS Core Services', icon: 'server', content: `
+        <strong>Key Topics:</strong>
+        <ul>
+          <li>Compute: EC2, Lambda, Elastic Beanstalk</li>
+          <li>Storage: S3, EBS, Glacier</li>
+          <li>Database: RDS, DynamoDB, Redshift</li>
+          <li>Networking: VPC, Route 53, CloudFront</li>
+        </ul>
+        <strong>Deep Dive:</strong>
+        <p>EC2: Virtual servers in the cloud<br>
+        Lambda: Serverless compute<br>
+        S3: Scalable object storage<br>
+        DynamoDB: NoSQL key-value store</p>` },
+      { id: 'm3', title: 'Module 3: Global Infrastructure and Reliability', icon: 'globe' },
+      { id: 'm4', title: 'Module 4: AWS Well-Architected Framework', icon: 'cubes' },
+      { id: 'm5', title: 'Module 5: AWS Cloud Security', icon: 'shield-alt' },
+      { id: 'm6', title: 'Module 6: AWS Pricing and Support', icon: 'dollar-sign' },
+      { id: 'm7', title: 'Module 7: Migration and Innovation', icon: 'truck-moving' },
+      { id: 'm8', title: 'Module 8: AWS Cloud Adoption', icon: 'chart-line' },
+      { id: 'm9', title: 'Module 9: Monitoring and Analytics', icon: 'chart-bar' },
+      { id: 'm10', title: 'Module 10: AWS Compliance and Governance', icon: 'file-alt' },
+      { id: 'm11', title: 'Module 11: Review and Practice', icon: 'clipboard-check' },
+    ];
+
+    modules.forEach(mod => {
+      document.write(`
+        <section>
+          <h2 onclick="toggle('${mod.id}')"><i class='fas fa-${mod.icon} icon'></i> ${mod.title}</h2>
+          <div class='content' id='${mod.id}'>${mod.content || 'Content will be added here.'}</div>
+        </section>`);
+    });
+
+    function toggle(id) {
+      const section = document.getElementById(id);
+      section.style.display = section.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
